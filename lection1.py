@@ -4,9 +4,7 @@ import math
 print("Hello, World!")
 
 #2
-print("Python")
-print("is")
-print("the best")
+print("Python", "is", "the best", sep="\n")
 
 #3
 length = int(input("Enter a length value: "))
