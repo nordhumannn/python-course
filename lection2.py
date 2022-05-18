@@ -1,45 +1,22 @@
 #1
 num = int(input("Enter a number: "))
-
-if num < 0:
-    print(f"Negative number: {num}")
-else:
-    print("Positive number")
+print((num < 0 and num) or "")
 
 #2
 num2 = int(input("Enter a number: "))
-
-if num2 < 20:
-    print(f"{num2} is less than 20")
-else:
-    print(f"{num2} is greater than 20")
+print((num2 < 20 and f"{num2} is less than 20") or (num2 > 20 and f"{num2} greater than 20"))
 
 #3
 num3 = int(input("Enter a number: "))
-
-if num3 == 0:
-    print("Given number is zero")
-else:
-    print("Given number is not zero")
+print((num3 is 0 and "Zero") or (num3 is not 0 and "Not zero"))
 
 #4
 num4 = int(input("Enter a number: "))
-
-if num4 % 2 == 0:
-    print(f"{num4} is an even number")
-else:
-    print(f"{num4} is an odd number")
+print((num4 % 2 is 0 and f"{num4} is an even number") or num4 % 2 is not 0 and f"{num4} is an odd number")
 
 #5
 n1 = int(input("Enter 1st number: "))
 n2 = int(input("Enter 1st number: "))
 n3 = int(input("Enter 1st number: "))
 
-max_num = n1
-
-if n2 > max_num:
-    max_num = n2
-if n3 > max_num:
-    max_num = n3
-
-print(f"Max number: {max_num}")
+print((n1 > n2 and n1 > n3 and f"{n1} is the largest number") or (n2 > n1 and n2 > n3 and f"{n2} is the largest number") or (n3 > n1 and n3 > n2 and f"{n3} is the largest number"))
