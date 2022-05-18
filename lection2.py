@@ -16,8 +16,8 @@ print((num4 % 2 is 0 and f"{num4} is an even number") or num4 % 2 is not 0 and f
 
 #5
 n1 = int(input("Enter 1st number: "))
-n2 = int(input("Enter 1st number: "))
-n3 = int(input("Enter 1st number: "))
+n2 = int(input("Enter 2st number: "))
+n3 = int(input("Enter 3st number: "))
 
 max_num = max(n1, n2, n3)
 
