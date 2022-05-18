@@ -12,7 +12,7 @@ print((num3 is 0 and "Zero") or (num3 is not 0 and "Not zero"))
 
 #4
 num4 = int(input("Enter a number: "))
-print((num4 % 2 is 0 and f"{num4} is an even number") or num4 % 2 is not 0 and f"{num4} is an odd number")
+print((num4 % 2 is 0 and f"{num4} is an even number") or (num4 % 2 is not 0 and f"{num4} is an odd number"))
 
 #5
 n1 = int(input("Enter 1st number: "))
