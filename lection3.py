@@ -11,10 +11,10 @@ floor_res = (apart % total_apart) // 4 + 1
 print(entrance_res, floor_res)
 
 #2
-year = int(input("Enter a year: "))
+year = int(input('Enter a year: '))
 
-if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-    print(f"{year}: высокосный год")
+if (not year % 4 and year % 100) or (not year % 400):
+	print(f"{year}: высокосный год")
 else:
     print(f"{year}: не высокосный год")
 
