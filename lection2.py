@@ -8,7 +8,7 @@ print((num2 < 20 and f"{num2} is less than 20") or f"{num2} is greater than 20")
 
 #3
 num3 = int(input("Enter a number: "))
-print((num3 is 0 and "Zero") or (num3 is not 0 and "Not zero"))
+print(not num3)
 
 #4
 num4 = int(input("Enter a number: "))
