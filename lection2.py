@@ -1,6 +1,6 @@
 #1
 num = int(input("Enter a number: "))
-print((num < 0 and num) or "")
+print((num < 0 and num) or "Number greater than zero")
 
 #2
 num2 = int(input("Enter a number: "))
