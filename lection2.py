@@ -4,7 +4,7 @@ print((num < 0 and num) or "Number greater than zero")
 
 #2
 num2 = int(input("Enter a number: "))
-print((num2 < 20 and f"{num2} is less than 20") or f"{num2} is greater than 20"))
+print((num2 < 20 and f"{num2} is less than 20") or f"{num2} is greater than 20")
 
 #3
 num3 = int(input("Enter a number: "))
