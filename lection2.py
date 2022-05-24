@@ -12,13 +12,10 @@ print(not num3)
 
 #4
 num4 = int(input("Enter a number: "))
-print((num4 % 2 is 0 and f"{num4} is an even number") or num4 % 2 is not 0 and f"{num4} is an odd number")
+print((num4 % 2 and 'Odd number') or 'Even number')
 
 #5
-n1 = int(input("Enter 1st number: "))
-n2 = int(input("Enter 2st number: "))
-n3 = int(input("Enter 3st number: "))
+n = input('Enter a number: ').split(',')
+n = map(int, n)
 
-max_num = max(n1, n2, n3)
-
-print(max_num)
+print(max(n))
