@@ -26,11 +26,9 @@ else:
 
 #2
 year = int(input('Enter a year: '))
+days = 366 if not year % 4 and year % 100 or not year % 400 else 365
 
-if (not year % 4 and year % 100) or (not year % 400):
-	print(f"{year}: высокосный год")
-else:
-    print(f"{year}: не высокосный год")
+print(days)
 
 #3  
 a, b, c = map(int, input('Enter the value of the sides(3): ').split(','))
