@@ -2,8 +2,6 @@
 for i in range(100):
 	if not i % 7:
 		print(i)
-	else:
-		continue
 
 #2
 n = int(input('>>> '))
