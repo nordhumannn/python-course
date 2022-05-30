@@ -43,23 +43,14 @@ for i in range (2, 100):
         print(i)
 
 #6
-n = int(input('>>> '))
-k = n
+n = int(input('N: '))
 
-for i in range(1, n):
-	if k % 2 != 0:
-		for j in range(k):
-			print('*', end='')
-	else:
-		k -= 1
-		continue
-	k -= 1
-	if k == 2:
-		print()
-		for a in range(1, n + 1):
-			if a % 2 != 0:
-				for b in range(a):
-					print('*', end='')
-				print()
-	else:
-		print()
+space = 0
+
+for i in range(n, 0, -2):
+	print(f"{' ' * space}{'*' * i}")
+	space += 1
+space -= 2
+for i in range(3, n + 1, 2):
+	print(f"{' ' * space}{'*' * i}")
+	space -= 1
