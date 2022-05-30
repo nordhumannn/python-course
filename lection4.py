@@ -31,6 +31,14 @@ for i in range(y):
 			print(' ', end='')
 		print('*', end='')
 	print()
+	
+#4.1
+n, m = int(input('n: ')), int(input('m: '))
+
+mid = (m - 2) * f"*{' ' * (n - 2)}*\n"
+res = f"{'*' * n}\n{mid}{'*' * n}\n"
+
+print(res)
 
 #5
 for i in range (2, 100):
