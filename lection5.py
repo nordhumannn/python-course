@@ -29,6 +29,13 @@ if part1 == part2:
 	print(f'{num} - is a Palindrome')
 else:
 	print(f'{num} - is NOT a Palindrome')
+	
+#2.1
+num = input('Number: ')
+if num == num[::-1]:
+  print(f'{num} - Polindrome')
+else:
+  print(f'{num} - NOT a Polindrome')
 
 #3
 import math
