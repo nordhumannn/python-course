@@ -15,9 +15,6 @@ print(s.count('b'))
 
 # 2
 name = input('Name: ')
-
-name = input('Name: ')
-
 res = 'Valid' if name.istitle() and name.isalpha() else 'NOT valid'
 
 print(res)
