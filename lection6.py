@@ -16,20 +16,11 @@ print(s.count('b'))
 # 2
 name = input('Name: ')
 
-digit = True
-n_title = True
+name = input('Name: ')
 
-for item in name:
-    if item.isdigit():
-        digit = False
+res = 'Valid' if name.istitle() and name.isalpha() else 'NOT valid'
 
-if not name.istitle():
-    n_title = False
-
-if not digit or not n_title:
-    print('NOT valid')
-else:
-    print('Valid')
+print(res)
 
 # 3
 s = input('>>> ')
