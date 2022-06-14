@@ -9,14 +9,12 @@ print(max_num(nums))
 
 #------ 2 ------
 
-num1 = 23
-num2 = 32
-s = 'Number: '
+def func(a, b, c):
+    if not isinstance(a, int) or not isinstance(b, int) or not isinstance(c, str):
+        return None
+    return f'{a + b}{c}'
 
-def str_num(a, b, s):
-     return s + str(a + b)
-
-print(str_num(num1, num2, s))
+print(func(2, 4, 'hello'))
 
 #------ 3 ------
 
