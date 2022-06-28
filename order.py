@@ -1,22 +1,31 @@
+from product import Product
+from customer import Customer
+
 class Order:
-    def __init__(self, customer, *products):
-        self.customer_name = f'{customer.name} {customer.surname}'
-        self.contact = customer.phone_number
-        self.products = products
+    
+    def __init__(self, customer: Customer):
+        self.customer = customer
+        self.cart = []
+        self.quantities = []
+
+    def add_product(self, product: Product, quantity: int | float):
+        self.cart.append(product)
+        self.quantities.append(quantity)
+
 
     def total_price(self):
         total = 0
-        for i in self.products:
-            total += i.get_price()
+        for i, item in enumerate(self.cart):
+            total += item.price * self.quantities[i]
         return total
 
-    def order_list(self):
-        order_list = ''
-        count = 1
-        for item in self.products:
-            order_list += f'{count}) {item}\n'
-            count += 1
-        return order_list
+    def __str__(self):
+        res = f'Customer: {self.customer}\n'
 
-    def __str__(self) -> str:
-        return f'----- Order -----\n\nCustomer: {self.customer_name}\nContact: {self.contact}\nItems: {Order.order_list(self)} \nTotal price: {Order.total_price(self)}$'
+        for i, item in enumerate(self.cart):
+            tmp = f'\t{item} UAH * {self.quantities[i]} = {self.quantities[i] * item.price}\n'
+            res += tmp
+
+        res += f'\nTotal price: {self.total_price()} UAH'
+
+        return res
