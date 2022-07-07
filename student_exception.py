@@ -2,12 +2,13 @@ STUDENTS_LIMIT_IN_GROUP = 10
 
 class StudentLimitError(Exception):
     
-    def __init__(self, msg):
+    def __init__(self, value: int | float=None, msg: str=None):
         super().__init__()
+        self.value = value
         self.msg = msg
 
-    def return_exception(self):
-        return self.msg
+    def __str__(self):
+        return f'{self.value}, {self.msg}'
 
 class Person:
 
@@ -35,17 +36,14 @@ class Group:
         self.group_list = []
 
     def add_student(self, student: Student):
-        len_list = len(self.group_list)
-        try:
-            if len_list < 10:
-                self.group_list.append(student)
-            if len_list >= 10:
-                raise StudentLimitError('The group can only accommodate up to 10 students')
-        except StudentLimitError as error:
-            print(error.return_exception())
-
-        if student not in self.group_list and len(self.group_list) < STUDENTS_LIMIT_IN_GROUP:
-            self.group_list.append(student)
+        if not isinstance(student, Student):
+            raise TypeError()
+        if len(self.group_list) == STUDENTS_LIMIT_IN_GROUP:
+            raise StudentLimitError(STUDENTS_LIMIT_IN_GROUP, f'The group is full ({STUDENTS_LIMIT_IN_GROUP})')
+        if student in self.group_list:
+            raise ValueError('Student already exist')
+        
+        self.group_list.append(student)
 
     def remove_student(self, student: Student):
         if student in self.group_list:
@@ -77,14 +75,17 @@ st_11 = Student('N', 'N', 45, 'DFDBD')
 
 group = Group('Python Pro')
 
-group.add_student(st_1)
-group.add_student(st_2)
-group.add_student(st_3)
-group.add_student(st_4)
-group.add_student(st_5)
-group.add_student(st_6)
-group.add_student(st_7)
-group.add_student(st_8)
-group.add_student(st_9)
-group.add_student(st_10)
-group.add_student(st_11)
+try:
+    group.add_student(st_1)
+    group.add_student(st_2)
+    group.add_student(st_3)
+    group.add_student(st_4)
+    group.add_student(st_5)
+    group.add_student(st_6)
+    group.add_student(st_7)
+    group.add_student(st_8)
+    group.add_student(st_9)
+    group.add_student(st_10)
+    group.add_student(st_11)
+except Exception as ex:
+    print(ex)
